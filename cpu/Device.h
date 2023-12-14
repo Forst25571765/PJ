@@ -51,6 +51,8 @@ class Device {
     void SetEcontrol();
     void SetMcontrol();
     void SetCC();
+    void SetDSrcA();
+    void SetDSrcB();
 
     private:
     uint64_t addr_end = 0;

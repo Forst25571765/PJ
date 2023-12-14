@@ -22,6 +22,8 @@ uint8_t Char2Uint8(char c) {
     exit(1);
 }
 Device::Device(std::string code) {
+    memset(Reg, 0, REG_SIZE);
+    memset(Mem, 0, MEM_SIZE);
     Stat = S_AOK;
     int length = code.length();
     if (length > 2 * MEM_SIZE) throw std::domain_error("code too long");
