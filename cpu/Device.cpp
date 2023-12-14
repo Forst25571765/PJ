@@ -35,3 +35,39 @@ Device::Device(std::string code) {
     }
     addr = 0;
 }
+uint8_t Device::ReadHigh4Bits(uint64_t pos) {
+    return (Mem[pos] & 0xf0u) >> 4u;
+}
+uint8_t Device::ReadLow4Bits(uint64_t pos) { 
+    return (Mem[pos] & 0x0fu); 
+}
+uint64_t Device::Read8Bytes(uint64_t pos) {
+    return *(uint64_t *)(Mem + pos);
+}
+uint64_t Device::Read4Bytes(uint64_t pos) {
+    return *(uint32_t *)(Mem + pos);
+}
+uint64_t Device::Read2Bytes(uint64_t pos) {
+    return *(uint16_t *)(Mem + pos);
+}
+uint64_t Device::Read1Bytes(uint64_t pos) {
+    return *(uint8_t *)(Mem + pos);
+}
+void Device::Write8Bytes(uint64_t pos, uint64_t val) {
+    *(uint64_t *)(Mem + pos) = val;
+}
+void Device::Write4Bytes(uint64_t pos, uint64_t val) {
+    *(uint32_t *)(Mem + pos) = val;
+}
+void Device::Write2Bytes(uint64_t pos, uint64_t val) {
+    *(uint16_t *)(Mem + pos) = val;
+}
+void Device::Write1Bytes(uint64_t pos, uint64_t val) { 
+    *(uint8_t *)(Mem + pos) = val; 
+}
+void Device::Fetch() {
+    if (F.control == C_STALL) {
+        return; 
+    }
+    f.pc = SelectPC();
+}
