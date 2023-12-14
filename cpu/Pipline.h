@@ -123,6 +123,7 @@ struct E_Wire {
     uint8_t ifun = 0;
     uint64_t valE = 0;
     uint64_t valA = 0;
+    uint64_t valC = 0;
     uint8_t dstE = R_NONE;
     uint8_t dstM = R_NONE;
     uint64_t predPC = 0;

@@ -59,10 +59,10 @@ class Device {
     uint64_t badnumber = 0;
     uint64_t addr;
     uint64_t GetFPredPC();
-    bool IfAddrReadable();
-    bool IfAddrWriteable();
-    bool IfAddrExecutable();
-    bool IfInstValid();
+    bool IfAddrReadable(uint64_t pos);
+    bool IfAddrWriteable(uint64_t pos);
+    bool IfAddrExecutable(uint64_t pos);
+    bool IfInstValid(uint8_t icode);
     bool IfExecuteDone();
     bool CalcCond(bool CCODE[3]);
     bool IfLoadUseH();

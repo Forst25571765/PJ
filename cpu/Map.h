@@ -15,6 +15,20 @@ const uint8_t I_POPQ = 0XB;
 const uint8_t I_IOPQ = 0XC;
 const uint8_t I_OPQN = 0XD;
 const uint8_t I_IOPQN = 0XE;
+//ALU
+const uint8_t ALU_ADD = 0;
+const uint8_t ALU_SUB = 1;
+const uint8_t ALU_AND = 2;
+const uint8_t ALU_XOR = 3;
+const uint8_t ALU_OR = 4;
+const uint8_t ALU_SHL = 5;
+const uint8_t ALU_SHR = 6;
+const uint8_t ALU_SAR = 7;
+const uint8_t ALU_MULQ = 8;
+const uint8_t ALU_DIVQ = 9;
+const uint8_t ALU_REMQ = 0xa;
+const uint8_t ALU_MINQ = 0xb;
+const uint8_t ALU_MAXQ = 0xc;
 //Register
 const uint8_t R_RAX = 0;
 const uint8_t R_RCX = 1;
